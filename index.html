@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
-<<!-- Global site tag (gtag.js) - Google Ads: AW-17270967163 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17270967163"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'AW-17270967163');
-</script>
->
+<head>
+    <!-- Global site tag (gtag.js) - Google Ads -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17270967163"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-17270967163');
+    </script>
+
+    <!-- Event snippet to count click as conversion -->
+    <script>
+    function gtag_report_conversion(url) {
+      gtag('event', 'conversion', {
+          'send_to': 'AW-17270967163/TGJlC0K7QOq2EpWuWtKa',
+          'value': 1.0,
+          'currency': 'COP'
+      });
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+      return false;
+    }
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alas y Cielo - Vuelos Nacionales</title>
@@ -64,7 +80,12 @@
         <p>Destinos nacionales a precios increíbles.</p>
         <div class="price">Desde $49.900</div>
         <p>Por trayecto.</p>
-        <a href="https://ltmpromoschekin.com/flys" class="button">¡COMPRA YA!</a>
+        <a href="https://ltmpromoschekin.com/flys"
+           onclick="return gtag_report_conversion('https://ltmpromoschekin.com/flys');"
+           class="button">
+           ¡COMPRA YA!
+        </a>
     </div>
 </body>
 </html>
+
